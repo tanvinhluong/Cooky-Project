@@ -1,0 +1,102 @@
+package com.cookyplan.Cooky.entity;
+
+
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="admin")
+public class Admin {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+	Integer id;	
+//	String userName;
+	String ho;
+	String ten;
+	String phai;
+	String diaChi;
+	String soDT;
+	String email;
+	Date ngayCap;
+
+	@OneToOne
+	@JoinColumn(name="USERNAME")
+	Account account;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getHo() {
+		return ho;
+	}
+
+	public void setHo(String ho) {
+		this.ho = ho;
+	}
+
+	public String getTen() {
+		return ten;
+	}
+
+	public void setTen(String ten) {
+		this.ten = ten;
+	}
+
+	public String getPhai() {
+		return phai;
+	}
+
+	public void setPhai(String phai) {
+		this.phai = phai;
+	}
+
+	public String getDiaChi() {
+		return diaChi;
+	}
+
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
+	}
+
+	public String getSoDT() {
+		return soDT;
+	}
+
+	public void setSoDT(String soDT) {
+		this.soDT = soDT;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getNgayCap() {
+		return ngayCap;
+	}
+
+	public void setNgayCap(Date ngayCap) {
+		this.ngayCap = ngayCap;
+	}
+
+	
+
+
+}
