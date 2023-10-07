@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Ingredients {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID")
+	@Column(name = "ID_INGREDIENT")
 	Integer id;
 	@Column(name = "NAME")
 	String name;
@@ -26,7 +26,7 @@ public class Ingredients {
 	@Column(name = "UNIT")
 	String unit;
 	
-	@OneToMany(mappedBy="ingredients")
+	@OneToMany(mappedBy="ingredientId")
 	Collection<FoodDetails> foodDetails;
 
 	public Integer getId() {

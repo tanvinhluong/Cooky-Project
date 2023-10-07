@@ -2,6 +2,7 @@
 package com.cookyplan.Cooky.entity;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.cookyplan.Cooky.entity.CategoryDetails;
+
 
 @Entity
 
@@ -19,14 +20,15 @@ import com.cookyplan.Cooky.entity.CategoryDetails;
 public class Category {
 
 	@Id
-
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	@Column(name = "ID_CATEGORY")
 	private Integer id;
 
 	@Column(name = "NAME")
 	private String name;
+	
+	@OneToMany(mappedBy="categoryId")
+	List<CategoryDetails> categorydetails;
 
 	public Integer getId() {
 		return id;
@@ -44,15 +46,15 @@ public class Category {
 		this.name = name;
 	}
 
-	@OneToMany(mappedBy = "category")
-	Collection<CategoryDetails> categoryDetails;
-
-	public Collection<CategoryDetails> getCategoryDetails() {
-		return categoryDetails;
+	public List<CategoryDetails> getCategorydetails() {
+		return categorydetails;
 	}
 
-	public void setCategoryDetails(Collection<CategoryDetails> categoryDetails) {
-		this.categoryDetails = categoryDetails;
+	public void setCategorydetails(List<CategoryDetails> categorydetails) {
+		this.categorydetails = categorydetails;
 	}
+	
+	
+
 
 }

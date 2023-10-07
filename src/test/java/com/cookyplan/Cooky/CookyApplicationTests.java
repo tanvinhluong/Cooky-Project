@@ -8,6 +8,7 @@ class CookyApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
