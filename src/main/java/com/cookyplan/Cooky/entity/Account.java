@@ -1,27 +1,40 @@
 package com.cookyplan.Cooky.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="account")
-
 public class Account {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_ACCOUNT")
 	Integer id;
+	@Column(name="USERNAME")
 	String username;
+	@Column(name="PASSWORD")
 	String password;
-//	String userRole;
-
 	
-
+	@ManyToOne
+	@JoinColumn(name="ROLE_ID")
+	Role roleId;
+	
+	
+	
+	public Role getRoleId() {
+		return roleId;
+	}
+	public void setRoleId(Role roleId) {
+		this.roleId = roleId;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -40,13 +53,6 @@ public class Account {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@OneToOne
-	@JoinColumn(name="ROLENAME")
-	Role role;	
-	@OneToOne(mappedBy="account")
-	User user;
-	@OneToOne(mappedBy="account")
-	Admin admin;
-
 	
+		
 }

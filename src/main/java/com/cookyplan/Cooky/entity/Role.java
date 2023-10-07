@@ -1,6 +1,6 @@
 package com.cookyplan.Cooky.entity;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,42 +13,28 @@ import javax.persistence.Table;
 @Entity
 @Table(name="role")
 public class Role {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ROLE_ID")
-	Integer roleID;
+	Integer roleId;
 	@Column(name="ROLENAME")
 	String roleName;
-
-	@OneToMany(mappedBy="role")
-	Collection<Account> Accounts;
-
+	
+	@OneToMany(mappedBy="roleId")
+	List<Account> accounts;
+	
 	public Integer getRoleId() {
-		return roleID;
+		return roleId;
 	}
-
 	public void setRoleId(Integer roleId) {
-		this.roleID = roleId;
+		this.roleId = roleId;
 	}
-
 	public String getRoleName() {
 		return roleName;
 	}
-
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 	}
-
-	public Collection<Account> getAccounts() {
-		return Accounts;
-	}
-
-	public void setAccounts(Collection<Account> accounts) {
-		Accounts = accounts;
-	}
-
-
-
-
+	
 }

@@ -22,11 +22,11 @@ public class CategoryDetails {
 
 	@ManyToOne
 	@JoinColumn(name = "ID_CATEGORY")
-	Category category;
+	Category categoryId;
 	
 	@ManyToOne
 	@JoinColumn(name = "ID_FOOD")
-	Foods foods;
+	Foods foodId;
 
 	public Integer getId() {
 		return id;
@@ -35,5 +35,25 @@ public class CategoryDetails {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+	public Category getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Category categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public Foods getFoodId() {
+		return foodId;
+	}
+
+	public void setFoodId(Foods foodId) {
+		this.foodId = foodId;
+	}
+
+	
+	
+	
 
 }

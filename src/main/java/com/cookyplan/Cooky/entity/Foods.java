@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Foods {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID")
+	@Column(name="ID_FOOD")
 	Integer id;
 	@Column(name="FOODNAME")
 	String foodName;
@@ -30,19 +30,19 @@ public class Foods {
 	@Column(name="RECIPE")
 	String recipe;
 	@Column(name="DETAILS")
-	String details;
+	String details;	
 	
-	
-	@OneToMany(mappedBy="foods")
+	@OneToMany(mappedBy="categoryId")
 	Collection<CategoryDetails> categoryDetails;
-	
-	@OneToMany(mappedBy="foods")
+
+	@OneToMany(mappedBy="foodId")
 	Collection<FoodDetails> foodDetails;
 
 	public Integer getId() {
 		return id;
 	}
 
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}

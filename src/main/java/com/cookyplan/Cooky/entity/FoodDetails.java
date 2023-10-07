@@ -18,6 +18,15 @@ public class FoodDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	Integer id;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_FOOD")
+	Foods foodId;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_INGREDIENT")
+	Ingredients ingredientId;
+	
 	@Column(name = "QUANTITY")
 	Integer quantity;
 	@Column(name = "UNITPRICE")
@@ -25,13 +34,22 @@ public class FoodDetails {
 	@Column(name = "UNITCALORIES")
 	String unitCalories;
 
-	@ManyToOne
-	@JoinColumn(name = "ID_INGREDIENTS")
-	Ingredients ingredients;
 
-	@ManyToOne
-	@JoinColumn(name = "ID_FOOD")
-	Foods foods;
+	public Foods getFoodId() {
+		return foodId;
+	}
+
+	public void setFoodId(Foods foodId) {
+		this.foodId = foodId;
+	}
+
+	public Ingredients getIngredientId() {
+		return ingredientId;
+	}
+
+	public void setIngredientId(Ingredients ingredientId) {
+		this.ingredientId = ingredientId;
+	}
 
 	public Integer getId() {
 		return id;
