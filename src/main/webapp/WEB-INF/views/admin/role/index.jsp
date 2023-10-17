@@ -11,7 +11,7 @@
 			<form:input path="roleId" cssClass="form-control" readonly="true"/>
 		</div>
 		<div class="form-group">
-			<label>Name</label>
+			<label>roleName</label>
 			<form:input path="roleName" cssClass="form-control"/>
 		</div>
 		<div class="form-group">

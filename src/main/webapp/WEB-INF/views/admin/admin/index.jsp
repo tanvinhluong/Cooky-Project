@@ -7,12 +7,32 @@
 	<form:form action="/admin/admin/index" modelAttribute="model">
 		
 		<div class="form-group">
-			<label>Id</label>
-			<form:input path="id" cssClass="form-control" readonly="true"/>
+			<label>IdAccount</label>
+			<form:input path="accountId.id" cssClass="form-control" />
 		</div>
 		<div class="form-group">
-			<label>Name</label>
-			<form:input path="accountId" cssClass="form-control"/>
+			<label>Ho</label>
+			<form:input path="ho" cssClass="form-control"/>
+		</div>
+		<div class="form-group">
+			<label>Ten</label>
+			<form:input path="ten" cssClass="form-control"/>
+		</div>
+		<div class="form-group">
+			<label>Phai</label>
+			<form:input path="phai" cssClass="form-control"/>
+		</div>
+		<div class="form-group">
+			<label>DiaChi</label>
+			<form:input path="diachi" cssClass="form-control"/>
+		</div>
+		<div class="form-group">
+			<label>SoDT</label>
+			<form:input path="sodt" cssClass="form-control"/>
+		</div>
+		<div class="form-group">
+			<label>Email</label>
+			<form:input path="email" cssClass="form-control"/>
 		</div>
 		<div class="form-group">
 			<button class="btn btn-default" formaction="/admin/admin/insert">Insert</button>
@@ -28,8 +48,15 @@
 	<table class="table table-hover">
 	<thead>
 		<tr>
-			<th>Id</th>
-			<th>Names</th>
+			<th>IdAdmin</th>
+			<th>IdAccount</th>
+			<th>Ho</th>
+			<th>Ten</th>
+			<th>Phai</th>
+			<th>DiaChi</th>
+			<th>SoDienThoai</th>
+			<th>Email</th>
+			<th>NgayCap</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -37,7 +64,14 @@
 		<tr>
 			<td>${e.id}</td>
 			<td>${e.accountId.id}</td>
-
+			<td>${e.ho}</td>
+			<td>${e.ten}</td>
+			<td>${e.phai}</td>
+			<td>${e.diachi}</td>
+			<td>${e.sodt}</td>
+			<td>${e.email}</td>
+			<td>${e.ngayCap}</td>
+			
 			<a class="btn btn-sm btn-warning" href="/admin/admin/edit/${e.id}">Edit</a>
 			<a class="btn btn-sm btn-danger" href="/admin/admin/delete/${e.id}">Delete</a>
 			</td>		

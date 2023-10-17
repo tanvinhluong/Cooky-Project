@@ -7,12 +7,12 @@
 	<form:form action="/admin/favorite/index" modelAttribute="model">
 		
 		<div class="form-group">
-			<label>Id</label>
-			<form:input path="id" cssClass="form-control" readonly="true"/>
+			<label>userId</label>
+			<form:input path="userId" cssClass="form-control" />
 		</div>
 		<div class="form-group">
-			<label>Name</label>
-			<form:input path="id" cssClass="form-control"/>
+			<label>favorited</label>
+			<form:input path="favorited" cssClass="form-control"/>
 		</div>
 		<div class="form-group">
 			<button class="btn btn-default" formaction="/admin/favorite/insert">Insert</button>
@@ -29,8 +29,8 @@
 	<thead>
 		<tr>
 			<th>Id</th>
-			<th>Names</th>
-			<th>Names</th>
+			<th>UserID</th>
+			<th>Favorited</th>
 		</tr>
 	</thead>
 	<tbody>
