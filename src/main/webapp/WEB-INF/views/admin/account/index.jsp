@@ -7,12 +7,16 @@
 	<form:form action="/admin/account/index" modelAttribute="model">
 		
 		<div class="form-group">
-			<label>Id</label>
-			<form:input path="id" cssClass="form-control" readonly="true"/>
+			<label>username</label>
+			<form:input path="username" cssClass="form-control" />
 		</div>
 		<div class="form-group">
-			<label>Name</label>
-			<form:input path="username" cssClass="form-control"/>
+			<label>password</label>
+			<form:input path="password" cssClass="form-control"/>
+		</div>
+		<div class="form-group">
+			<label>role</label>
+			<form:input path="roleId.roleId" cssClass="form-control"/>
 		</div>
 		<div class="form-group">
 			<button class="btn btn-default" formaction="/admin/account/insert">Insert</button>
@@ -30,6 +34,8 @@
 		<tr>
 			<th>Id</th>
 			<th>Names</th>
+			<th>Password</th>
+			<th>Role</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -37,7 +43,8 @@
 		<tr>
 			<td>${e.id}</td>
 			<td>${e.username}</td>
-
+			<td>${e.password}</td>
+			<td>${e.roleId.roleId}</td>
 			<a class="btn btn-sm btn-warning" href="/admin/account/edit/${e.id}">Edit</a>
 			<a class="btn btn-sm btn-danger" href="/admin/account/delete/${e.id}">Delete</a>
 			</td>		

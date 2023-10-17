@@ -7,12 +7,12 @@
 	<form:form action="/admin/categorydetails/index" modelAttribute="model">
 		
 		<div class="form-group">
-			<label>Id</label>
-			<form:input path="id" cssClass="form-control" readonly="true"/>
+			<label>categoryid</label>
+			<form:input path="categoryId.id" cssClass="form-control" />
 		</div>
 		<div class="form-group">
-			<label>Name</label>
-			<form:input path="id" cssClass="form-control"/>
+			<label>foodid</label>
+			<form:input path="foodId.id" cssClass="form-control"/>
 		</div>
 		<div class="form-group">
 			<button class="btn btn-default" formaction="/admin/categorydetails/insert">Insert</button>

@@ -39,20 +39,19 @@ public class Admin {
 	@Column(name="DIACHI")
 	String diachi;
 	@Column(name="SODT")
+	String sodt;
+	@Column(name="EMAIL")
 	String email;
 	@Column(name="NGAYCAP")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="MM/dd/yyyy")
 	Date ngayCap;
-	
-	
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
 	public Account getAccountId() {
 		return accountId;
 	}
@@ -83,6 +82,12 @@ public class Admin {
 	public void setDiachi(String diachi) {
 		this.diachi = diachi;
 	}
+	public String getSodt() {
+		return sodt;
+	}
+	public void setSodt(String sodt) {
+		this.sodt = sodt;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -95,6 +100,9 @@ public class Admin {
 	public void setNgayCap(Date ngayCap) {
 		this.ngayCap = ngayCap;
 	}
+	
+	
+	
 	
 	
 	

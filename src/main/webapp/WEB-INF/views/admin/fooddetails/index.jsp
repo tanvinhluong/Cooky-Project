@@ -7,12 +7,12 @@
 	<form:form action="/admin/fooddetails/index" modelAttribute="model">
 		
 		<div class="form-group">
-			<label>Id</label>
-			<form:input path="id" cssClass="form-control" readonly="true"/>
+			<label>foodid</label>
+			<form:input path="foodId.id" cssClass="form-control" />
 		</div>
 		<div class="form-group">
-			<label>Name</label>
-			<form:input path="id" cssClass="form-control"/>
+			<label>ingredientid</label>
+			<form:input path="ingredientId.id" cssClass="form-control"/>
 		</div>
 		<div class="form-group">
 			<button class="btn btn-default" formaction="/admin/fooddetails/insert">Insert</button>
@@ -29,8 +29,8 @@
 	<thead>
 		<tr>
 			<th>Id</th>
-			<th>Names</th>
-			<th>Names</th>
+			<th>IdFood</th>
+			<th>IdIngredient</th>
 		</tr>
 	</thead>
 	<tbody>

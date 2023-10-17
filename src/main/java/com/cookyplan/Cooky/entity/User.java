@@ -38,12 +38,14 @@ public class User {
 	@Column(name="DIACHI")
 	String diachi;
 	@Column(name="SODT")
+	String sodt;
+	@Column(name="EMAIL")
 	String email;
 	@Column(name="NGAYTAO")
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="MM/dd/yyyy")
-	
+	@DateTimeFormat(pattern="MM/dd/yyyy")	
 	Date ngayCap;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -80,6 +82,12 @@ public class User {
 	public void setDiachi(String diachi) {
 		this.diachi = diachi;
 	}
+	public String getSodt() {
+		return sodt;
+	}
+	public void setSodt(String sodt) {
+		this.sodt = sodt;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -92,6 +100,8 @@ public class User {
 	public void setNgayCap(Date ngayCap) {
 		this.ngayCap = ngayCap;
 	}
+	
+	
 	
 	
 	
